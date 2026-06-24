@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
   <!-- ===== SEO: Primary Meta Tags ===== -->
   <title>Country Swing Dance Maine – Weekly Classes & Social Dancing in Portland</title>
   <meta name="description" content="Rodeo Swing Maine hosts country swing dance classes every Tuesday night in Portland, Maine. Beginners always welcome — you can even watch for free first. $10 gets you a lesson + social dancing til late at Zero Bar & Grille." />
@@ -122,500 +121,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rye&family=Lato:wght@400;700&family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet" />
 
-  <style>
-    /* ===== Reset & Base ===== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --teal:       #1B6E7A;
-      --teal-dark:  #143F48;
-      --teal-light: #2A8A98;
-      --sand:       #F5EDD6;
-      --sand-dark:  #E8D5A3;
-      --sienna:     #C85C1A;
-      --sienna-dark:#9E4110;
-      --gold:       #E6A020;
-      --gold-light: #F0BC50;
-      --text:       #2B2015;
-      --text-light: #5A4030;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Lato', sans-serif;
-      background: var(--sand);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* ===== Nav ===== */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: var(--teal-dark);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.75rem 2rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.35);
-    }
-    .nav-logo {
-      font-family: 'Rye', serif;
-      color: var(--gold);
-      font-size: 1.1rem;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-    }
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-    .nav-links a {
-      color: var(--sand);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--gold); }
-
-    /* ===== Hero ===== */
-    .hero {
-      min-height: 100vh;
-      background: var(--teal-dark);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 7rem 1.5rem 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Subtle wood-grain texture overlay */
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 3px,
-        rgba(255,255,255,0.018) 3px,
-        rgba(255,255,255,0.018) 6px
-      );
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      font-family: 'Lato', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.1rem;
-    }
-    .hero h1 {
-      font-family: 'Rye', serif;
-      font-size: clamp(2.6rem, 7vw, 5.2rem);
-      color: var(--sand);
-      line-height: 1.1;
-      margin-bottom: 0.4rem;
-      text-shadow: 3px 4px 0px var(--teal-dark), 0 0 40px rgba(230,160,32,0.18);
-    }
-    .hero h1 em {
-      color: var(--gold);
-      font-style: normal;
-      display: block;
-    }
-    .hero-sub {
-      font-family: 'Cabin Sketch', serif;
-      font-size: clamp(1.1rem, 3vw, 1.5rem);
-      color: var(--sand-dark);
-      margin-top: 0.8rem;
-      margin-bottom: 2.2rem;
-      letter-spacing: 0.04em;
-    }
-
-    /* Dancer silhouette SVG strip */
-    .dancer-strip {
-      display: flex;
-      gap: 3rem;
-      margin: 0.5rem 0 2.4rem;
-      opacity: 0.22;
-    }
-    .dancer-strip svg {
-      fill: var(--sand);
-      animation: sway 3.5s ease-in-out infinite alternate;
-    }
-    .dancer-strip svg:nth-child(2) { animation-delay: 0.6s; }
-    .dancer-strip svg:nth-child(3) { animation-delay: 1.2s; }
-    @keyframes sway {
-      from { transform: rotate(-2deg) translateY(0); }
-      to   { transform: rotate(2deg) translateY(-4px); }
-    }
-
-    .hero-cta-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-bottom: 2.5rem;
-    }
-    .btn {
-      display: inline-block;
-      font-family: 'Lato', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 4px;
-      padding: 0.85rem 2rem;
-      transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
-    .btn-primary {
-      background: var(--sienna);
-      color: #fff;
-    }
-    .btn-primary:hover { background: var(--sienna-dark); }
-    .btn-outline {
-      background: transparent;
-      color: var(--sand);
-      border: 2px solid var(--sand-dark);
-    }
-    .btn-outline:hover { background: rgba(255,255,255,0.1); }
-
-    .hero-details {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem 2rem;
-      justify-content: center;
-      font-size: 0.9rem;
-      color: var(--sand-dark);
-    }
-    .hero-details span {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .hero-details .dot {
-      width: 6px; height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    /* ===== Section shared ===== */
-    section {
-      padding: 5rem 1.5rem;
-    }
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-    }
-    .section-eyebrow {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--sienna);
-      margin-bottom: 0.6rem;
-    }
-    h2 {
-      font-family: 'Rye', serif;
-      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
-      color: var(--teal-dark);
-      line-height: 1.15;
-      margin-bottom: 1.2rem;
-    }
-    p { margin-bottom: 1rem; color: var(--text-light); font-size: 1.05rem; }
-    p:last-child { margin-bottom: 0; }
-
-    /* ===== Divider star ===== */
-    .star-divider {
-      text-align: center;
-      color: var(--gold);
-      font-size: 1.4rem;
-      letter-spacing: 0.5em;
-      margin: 0;
-      line-height: 1;
-      user-select: none;
-    }
-
-    /* ===== What to Expect ===== */
-    #expect {
-      background: var(--teal-dark);
-      color: var(--sand);
-    }
-    #expect h2 { color: var(--sand); }
-    #expect p { color: var(--sand-dark); }
-    #expect .section-eyebrow { color: var(--gold); }
-
-    .expect-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      margin-top: 2.5rem;
-    }
-    .expect-card {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
-      padding: 1.8rem 1.5rem;
-    }
-    .expect-card .icon {
-      font-size: 2rem;
-      margin-bottom: 0.8rem;
-    }
-    .expect-card h3 {
-      font-family: 'Cabin Sketch', serif;
-      font-size: 1.2rem;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
-    .expect-card p {
-      font-size: 0.95rem;
-      color: var(--sand-dark);
-      margin: 0;
-    }
-
-    /* ===== Schedule / Info ===== */
-    #info { background: var(--sand); }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-    @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
-
-    .info-card {
-      background: #fff;
-      border-radius: 8px;
-      padding: 1.8rem;
-      border-top: 4px solid var(--teal);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    }
-    .info-card h3 {
-      font-family: 'Cabin Sketch', serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--sienna);
-      margin-bottom: 0.5rem;
-    }
-    .info-card .big {
-      font-family: 'Rye', serif;
-      font-size: 1.55rem;
-      color: var(--teal-dark);
-      line-height: 1.2;
-      margin-bottom: 0.4rem;
-    }
-    .info-card p {
-      font-size: 0.95rem;
-      color: var(--text-light);
-      margin: 0;
-    }
-    .info-card a {
-      color: var(--teal);
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .info-card a:hover { text-decoration: underline; }
-    .badge {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--teal-dark);
-      font-weight: 700;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.7rem;
-      border-radius: 3px;
-      margin-top: 0.5rem;
-    }
-
-    /* ===== Beginners ===== */
-    #beginners {
-      background: var(--sienna);
-      color: #fff;
-    }
-    #beginners h2 { color: #fff; }
-    #beginners p { color: rgba(255,255,255,0.88); }
-    #beginners .section-eyebrow { color: var(--gold-light); }
-    .beginners-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-    @media (max-width: 640px) {
-      .beginners-inner { grid-template-columns: 1fr; }
-    }
-    .reassurance-list {
-      list-style: none;
-      padding: 0;
-      margin-top: 1.2rem;
-    }
-    .reassurance-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.7rem;
-      margin-bottom: 0.85rem;
-      font-size: 1rem;
-      color: rgba(255,255,255,0.92);
-    }
-    .reassurance-list li::before {
-      content: '✓';
-      background: var(--gold);
-      color: var(--teal-dark);
-      font-weight: 900;
-      font-size: 0.75rem;
-      width: 1.4rem;
-      height: 1.4rem;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
-    .pull-quote {
-      border-left: 4px solid var(--gold);
-      padding-left: 1.4rem;
-    }
-    .pull-quote blockquote {
-      font-family: 'Cabin Sketch', serif;
-      font-size: 1.5rem;
-      line-height: 1.35;
-      color: #fff;
-      margin-bottom: 0.6rem;
-    }
-    .pull-quote cite {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.65);
-      font-style: normal;
-    }
-
-    /* ===== Community ===== */
-    #community { background: #fff; }
-    .community-text { max-width: 620px; }
-    .stats-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2.5rem;
-    }
-    .stat {
-      display: flex;
-      flex-direction: column;
-    }
-    .stat .num {
-      font-family: 'Rye', serif;
-      font-size: 2.8rem;
-      color: var(--teal);
-      line-height: 1;
-    }
-    .stat .label {
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-top: 0.3rem;
-    }
-
-    /* ===== CTA / Final ===== */
-    #join {
-      background: var(--teal-dark);
-      text-align: center;
-    }
-    #join h2 { color: var(--sand); }
-    #join p { color: var(--sand-dark); max-width: 560px; margin: 0 auto 2rem; }
-    #join .section-eyebrow { color: var(--gold); }
-
-    .social-links {
-      display: flex;
-      gap: 1.2rem;
-      justify-content: center;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-    .social-btn {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(255,255,255,0.1);
-      border: 1.5px solid rgba(255,255,255,0.2);
-      color: var(--sand);
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.7rem 1.4rem;
-      border-radius: 4px;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .social-btn:hover {
-      background: rgba(255,255,255,0.18);
-      transform: translateY(-2px);
-    }
-    .social-btn svg { width: 18px; height: 18px; fill: currentColor; }
-
-    /* ===== Footer ===== */
-    footer {
-      background: #0D2B32;
-      color: rgba(255,255,255,0.45);
-      text-align: center;
-      padding: 1.8rem 1.5rem;
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
-    }
-    footer a { color: rgba(255,255,255,0.55); text-decoration: none; }
-    footer a:hover { color: var(--gold); }
-
-    /* ===== Rope divider ===== */
-    .rope {
-      width: 100%;
-      height: 8px;
-      background: repeating-linear-gradient(
-        90deg,
-        var(--sand-dark) 0px,
-        var(--sand-dark) 8px,
-        var(--sienna) 8px,
-        var(--sienna) 10px
-      );
-      opacity: 0.35;
-    }
-
-    /* ===== Responsive nav ===== */
-    @media (max-width: 560px) {
-      .nav-links { display: none; }
-      nav { justify-content: center; }
-    }
-
-    /* ===== Reduced motion ===== */
-    @media (prefers-reduced-motion: reduce) {
-      .dancer-strip svg { animation: none; }
-    }
-
-    /* ===== Focus visible ===== */
-    a:focus-visible, button:focus-visible {
-      outline: 3px solid var(--gold);
-      outline-offset: 3px;
-    }
-  </style>
+  <!-- ===== Stylesheet ===== -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
@@ -627,6 +134,7 @@
       <li><a href="#expect">What to Expect</a></li>
       <li><a href="#info">Details</a></li>
       <li><a href="#beginners">Beginners</a></li>
+      <li><a href="#instagram">Instagram</a></li>
       <li><a href="#join">Join Us</a></li>
     </ul>
   </nav>
@@ -643,7 +151,6 @@
     <!-- Simple dancer silhouettes -->
     <div class="dancer-strip" aria-hidden="true">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="72" viewBox="0 0 48 72">
-        <!-- Simplified couple silhouette -->
         <circle cx="15" cy="8" r="5"/>
         <circle cx="33" cy="7" r="5"/>
         <path d="M15 13 Q10 28 8 40 L5 55 10 56 14 42 16 55 21 55 18 38 20 25 26 35 22 55 28 55 26 35 30 22 Q35 30 34 42 30 55 36 55 40 42 36 28 33 12"/>
@@ -849,6 +356,97 @@
 
   <div class="rope"></div>
 
+  <!-- ===== INSTAGRAM ===== -->
+  <!--
+    HOW TO UPDATE POSTS:
+    1. Go to the Instagram post on instagram.com (desktop browser)
+    2. Click the "..." menu → "Embed" → copy the embed code
+    3. Paste it into one of the three .ig-post divs below, replacing the existing blockquote
+    4. Save and push — the Instagram embed script at the bottom handles the rest
+  -->
+  <section id="instagram" aria-labelledby="instagram-heading">
+    <div class="container">
+      <p class="section-eyebrow">Follow Along</p>
+      <h2 id="instagram-heading">Latest from the Floor</h2>
+      <p>A look at what Tuesday nights actually look like.</p>
+
+      <div class="instagram-grid">
+
+        <!-- POST 1: replace this blockquote with your embed code -->
+        <div class="ig-post">
+          <!-- <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/rodeoswingmaine/p/DZu-ox6ucCs/"
+            data-instgrm-version="14">
+            <a href="https://www.instagram.com/rodeoswingmaine/p/DZu-ox6ucCs/">View post on Instagram</a>
+          </blockquote> -->
+
+          <blockquote 
+            class="instagram-media"
+            data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DZu-ox6ucCs/?utm_source=ig_embed&amp;utm_campaign=loading"
+            data-instgrm-version="14"
+            style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"
+          >
+            <div style="padding:16px;">
+              <a href="https://www.instagram.com/p/DZu-ox6ucCs/?utm_source=ig_embed&amp;utm_campaign=loading"
+                style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
+                target="_blank">
+                  <div style=" display: flex; flex-direction: row; align-items: center;">
+                    <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
+                    <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                    <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                    <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+                  </div>
+                </div>
+                <div style="padding: 19% 0;"></div>
+                <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
+                  <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+                      <a href="https://www.instagram.com/p/DZu-ox6ucCs/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">
+                        A post shared by Country Swing in Maine (@rodeoswingmaine)
+                      </a>
+                    </p>
+                  </div>
+                </blockquote>
+            <script async src="//www.instagram.com/embed.js"></script>
+        </div>
+
+        <!-- POST 2: replace this blockquote with your embed code -->
+        <div class="ig-post">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/rodeoswingmaine/reel/DZaQgIPOoFY/"
+            data-instgrm-version="14">
+            <a href="https://www.instagram.com/rodeoswingmaine/reel/DZaQgIPOoFY/">View post on Instagram</a>
+          </blockquote>
+        </div>
+
+        <!-- POST 3: replace this blockquote with your embed code -->
+        <div class="ig-post">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/rodeoswingmaine/reel/DYvS30NJ21P/"
+            data-instgrm-version="14">
+            <a href="https://www.instagram.com/rodeoswingmaine/reel/DYvS30NJ21P/">View post on Instagram</a>
+          </blockquote>
+        </div>
+
+      </div>
+
+      <div class="instagram-follow">
+        <p>See what we're up to every week.</p>
+        <a class="btn btn-primary"
+           href="https://www.instagram.com/rodeoswingmaine"
+           target="_blank"
+           rel="noopener noreferrer">
+          Follow @RodeoSwingMaine on Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="rope"></div>
+
   <!-- ===== JOIN CTA ===== -->
   <section id="join" aria-labelledby="join-heading">
     <div class="container">
@@ -887,15 +485,18 @@
   <!-- ===== FOOTER ===== -->
   <footer>
     <p>
-      © 2026 Rodeo Swing Maine ·
-      <a href="https://www.facebook.com/RodeoSwingMaine" target="_blank" rel="noopener noreferrer">Facebook</a> ·
+      &copy; 2026 Rodeo Swing Maine &middot;
+      <a href="https://www.facebook.com/RodeoSwingMaine" target="_blank" rel="noopener noreferrer">Facebook</a> &middot;
       <a href="https://www.instagram.com/RodeoSwingMaine" target="_blank" rel="noopener noreferrer">Instagram</a>
     </p>
     <p style="margin-top:0.5rem">
-      Country Swing Dance · Portland, Maine · Every Tuesday Night ·
+      Country Swing Dance &middot; Portland, Maine &middot; Every Tuesday Night &middot;
       Zero Bar &amp; Grille, 155 Riverside St, Portland, ME 04103
     </p>
   </footer>
+
+  <!-- Instagram embed script — must be at end of body -->
+  <script async src="//www.instagram.com/embed.js"></script>
 
 </body>
 </html>
