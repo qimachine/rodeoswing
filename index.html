@@ -131,6 +131,17 @@
   <link rel="manifest" href="/site.webmanifest">
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EB91QZ9Q4W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EB91QZ9Q4W');
+</script>
+
+
 <body>
 
   <!-- ===== NAV ===== -->
@@ -246,7 +257,7 @@
           <h3>Where</h3>
           <p class="big">Zero Bar & Grille</p>
           <p>
-            <a href="https://maps.google.com/?q=155+Riverside+St+Portland+ME+04103" target="_blank" rel="noopener noreferrer">
+            <a href="https://maps.google.com/?q=155+Riverside+St+Portland+ME+04103" target="_blank" rel="noopener noreferrer" onclick="gtag('event','get_directions_click')">
               155 Riverside St, Portland, ME 04103
             </a>
           </p>
@@ -385,7 +396,8 @@
         <a class="btn btn-primary"
            href="https://www.instagram.com/rodeoswingmaine"
            target="_blank"
-           rel="noopener noreferrer">
+           rel="noopener noreferrer"
+           onclick="gtag('event','instagram_follow_click')">
           Follow @RodeoSwingMaine on Instagram
         </a>
       </div>
@@ -404,7 +416,7 @@
         Abundant parking. Full bar. Watch for free — pay $10 when you're ready to dance.
         No signup, no reservation — just show up.
       </p>
-      <a class="btn btn-primary" href="https://maps.google.com/?q=155+Riverside+St+Portland+ME+04103" target="_blank" rel="noopener noreferrer" style="font-size:1.05rem; padding: 1rem 2.4rem;">
+      <a class="btn btn-primary" href="https://maps.google.com/?q=155+Riverside+St+Portland+ME+04103" target="_blank" rel="noopener noreferrer" style="font-size:1.05rem; padding: 1rem 2.4rem;" onclick="gtag('event','get_directions_click')">
         Get Directions →
       </a>
 
@@ -413,7 +425,8 @@
            href="https://www.facebook.com/RodeoSwingMaine"
            target="_blank"
            rel="noopener noreferrer"
-           aria-label="Follow Rodeo Swing Maine on Facebook">
+           aria-label="Follow Rodeo Swing Maine on Facebook"
+           onclick="gtag('event','facebook_follow_click')">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           @RodeoSwingMaine
         </a>
@@ -421,7 +434,8 @@
            href="https://www.instagram.com/RodeoSwingMaine"
            target="_blank"
            rel="noopener noreferrer"
-           aria-label="Follow Rodeo Swing Maine on Instagram">
+           aria-label="Follow Rodeo Swing Maine on Instagram"
+           onclick="gtag('event','instagram_follow_click')">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" style="fill:var(--teal-dark)"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" style="stroke:var(--teal-dark);stroke-width:2;stroke-linecap:round"/></svg>
           @RodeoSwingMaine
         </a>
