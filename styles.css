@@ -527,6 +527,39 @@ footer a:hover { color: var(--gold); }
   opacity: 0.35;
 }
 
+/* ===== Flyer ===== */
+
+#flyer {
+  background: #fff;
+}
+
+.flyer-section {
+  text-align: center;
+}
+
+.flyer-section p {
+  max-width: 620px;
+  margin: 0 auto 2rem;
+}
+
+.flyer-link {
+  display: inline-block;
+}
+
+.flyer-image {
+  display: block;
+  width: min(100%, 650px);
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.18);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.flyer-image:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.25);
+}
+
 /* ===== Responsive nav ===== */
 @media (max-width: 560px) {
   .nav-links { display: none; }
