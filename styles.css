@@ -550,6 +550,7 @@ footer a:hover { color: var(--gold); }
   display: block;
   width: min(100%, 650px);
   height: auto;
+  margin: 0 auto;          /* ← add this line */
   border-radius: 10px;
   box-shadow: 0 10px 28px rgba(0,0,0,.18);
   transition: transform .2s ease, box-shadow .2s ease;
