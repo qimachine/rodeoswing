@@ -13,7 +13,7 @@
   --text:       #2B2015;
   --text-light: #5A4030;
 }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
 body {
   font-family: 'Lato', sans-serif;
   background: var(--sand);
@@ -28,18 +28,20 @@ nav {
   top: 0; left: 0; right: 0;
   z-index: 100;
   background: var(--teal-dark);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+}
+.nav-inner {
+  max-width: 860px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 2rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+  padding: 0.75rem 1.5rem;
 }
-.nav-logo {
-  font-family: 'Rye', serif;
-  color: var(--gold);
-  font-size: 1.1rem;
-  letter-spacing: 0.04em;
-  text-decoration: none;
+.nav-logo img {
+  height: 66px;
+  width: auto;
+  display: block;
 }
 .nav-links {
   display: flex;
@@ -69,6 +71,62 @@ nav {
   padding: 7rem 1.5rem 4rem;
   position: relative;
   overflow: hidden;
+}
+
+/* ===== Hero Gallery ===== */
+.hero-gallery {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-gallery-grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3px;
+}
+.hero-gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--teal-dark);
+  display: block;
+}
+.hero-gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20,63,72,0.90) 0%,
+    rgba(20,63,72,0.55) 35%,
+    rgba(20,63,72,0.55) 65%,
+    rgba(20,63,72,0.92) 100%
+  );
+}
+
+/* Mobile: fewer, larger photos instead of 8 cramped tiles */
+@media (max-width: 640px) {
+  .hero-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .hero-gallery-grid img:nth-child(n + 5) {
+    display: none;
+  }
+  .hero-gallery-grid img {
+    object-fit: cover;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Subtle wood-grain texture overlay */
@@ -124,24 +182,6 @@ nav {
   margin-top: 0.8rem;
   margin-bottom: 2.2rem;
   letter-spacing: 0.04em;
-}
-
-/* Dancer silhouette SVG strip */
-.dancer-strip {
-  display: flex;
-  gap: 3rem;
-  margin: 0.5rem 0 2.4rem;
-  opacity: 0.22;
-}
-.dancer-strip svg {
-  fill: var(--sand);
-  animation: sway 3.5s ease-in-out infinite alternate;
-}
-.dancer-strip svg:nth-child(2) { animation-delay: 0.6s; }
-.dancer-strip svg:nth-child(3) { animation-delay: 1.2s; }
-@keyframes sway {
-  from { transform: rotate(-2deg) translateY(0); }
-  to   { transform: rotate(2deg) translateY(-4px); }
 }
 
 .hero-cta-group {
@@ -223,17 +263,6 @@ h2 {
 }
 p { margin-bottom: 1rem; color: var(--text-light); font-size: 1.05rem; }
 p:last-child { margin-bottom: 0; }
-
-/* ===== Divider star ===== */
-.star-divider {
-  text-align: center;
-  color: var(--gold);
-  font-size: 1.4rem;
-  letter-spacing: 0.5em;
-  margin: 0;
-  line-height: 1;
-  user-select: none;
-}
 
 /* ===== What to Expect ===== */
 #expect {
@@ -528,34 +557,28 @@ footer a:hover { color: var(--gold); }
 }
 
 /* ===== Flyer ===== */
-
 #flyer {
   background: #fff;
 }
-
 .flyer-section {
   text-align: center;
 }
-
 .flyer-section p {
   max-width: 620px;
   margin: 0 auto 2rem;
 }
-
 .flyer-link {
   display: inline-block;
 }
-
 .flyer-image {
   display: block;
   width: min(100%, 650px);
   height: auto;
-  margin: 0 auto;          /* ← add this line */
+  margin: 0 auto;
   border-radius: 10px;
   box-shadow: 0 10px 28px rgba(0,0,0,.18);
   transition: transform .2s ease, box-shadow .2s ease;
 }
-
 .flyer-image:hover {
   transform: translateY(-3px);
   box-shadow: 0 16px 40px rgba(0,0,0,.25);
@@ -564,12 +587,7 @@ footer a:hover { color: var(--gold); }
 /* ===== Responsive nav ===== */
 @media (max-width: 560px) {
   .nav-links { display: none; }
-  nav { justify-content: center; }
-}
-
-/* ===== Reduced motion ===== */
-@media (prefers-reduced-motion: reduce) {
-  .dancer-strip svg { animation: none; }
+  .nav-inner { justify-content: center; }
 }
 
 /* ===== Focus visible ===== */
