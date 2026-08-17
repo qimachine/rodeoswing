@@ -118,6 +118,9 @@ nav {
   .hero-gallery-grid img {
     object-fit: cover;
   }
+  .hero-logo {
+    width: clamp(110px, 22vw, 140px);
+  }
 }
 
 .hero-content {
