@@ -359,6 +359,15 @@ p:last-child { margin-bottom: 0; }
   margin-top: 0.5rem;
 }
 
+/* ===== Etiquette ===== */
+#etiquette {
+  background: var(--teal-dark);
+  color: var(--sand);
+}
+#etiquette h2 { color: var(--sand); }
+#etiquette p { color: var(--sand-dark); }
+#etiquette .section-eyebrow { color: var(--gold); }
+
 /* ===== Beginners ===== */
 #beginners {
   background: var(--sienna);
