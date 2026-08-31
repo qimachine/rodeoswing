@@ -543,6 +543,7 @@ p:last-child { margin-bottom: 0; }
   padding: 0.7rem 1.4rem;
   border-radius: 4px;
   transition: background 0.2s, transform 0.15s;
+  width: 169px;
 }
 .social-btn:hover {
   background: rgba(255,255,255,0.18);
