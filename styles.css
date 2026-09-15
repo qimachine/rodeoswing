@@ -458,6 +458,68 @@ p:last-child { margin-bottom: 0; }
   margin-top: 0.3rem;
 }
 
+/* ===== Newsletter ===== */
+#newsletter { background: var(--sand); }
+.newsletter-section { text-align: center; }
+.newsletter-section p { max-width: 520px; margin-left: auto; margin-right: auto; }
+.newsletter-form-wrap { max-width: 480px; margin: 2rem auto 0; }
+
+.newsletter-form-wrap .formkit-fields {
+  flex-wrap: wrap;
+}
+.newsletter-form-wrap .formkit-field,
+.newsletter-form-wrap .formkit-submit {
+  flex: 1 1 100%;
+  /* max-width: 100%; */
+  width: 100%;
+  margin: 0 0 1rem 0 !important;
+}
+
+.newsletter-form-wrap .formkit-input {
+  background: #fff;
+  border: 1px solid var(--sand-dark);
+  border-radius: 4px;
+  box-shadow: none;
+  color: var(--text);
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  padding: 0.85rem 1rem;
+  height: auto;
+}
+.newsletter-form-wrap .formkit-input:focus {
+  border-color: var(--teal);
+}
+
+.newsletter-form-wrap .formkit-submit {
+  background: var(--sienna) !important;
+  border: none;
+  border-radius: 4px;
+  box-shadow: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+.newsletter-form-wrap .formkit-submit > span {
+  display: block;
+  padding: 0.85rem 1rem;
+  color: #fff !important;
+}
+.newsletter-form-wrap .formkit-submit:hover {
+  background: var(--sienna-dark) !important;
+}
+
+.newsletter-form-wrap .formkit-alert-success {
+  background: var(--sand-dark);
+  border-color: var(--teal);
+  color: var(--teal-dark);
+  padding: 1.25rem;
+}
+
+
+
 /* ===== Testimonial ===== */
 #testimonial { background: var(--sand); }
 .testimonial-quote {
