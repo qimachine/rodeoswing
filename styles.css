@@ -31,6 +31,7 @@ nav {
   box-shadow: 0 2px 12px rgba(0,0,0,0.35);
 }
 .nav-inner {
+  position: relative;
   max-width: 860px;
   margin: 0 auto;
   display: flex;
@@ -530,49 +531,36 @@ p:last-child { margin-bottom: 0; }
 .testimonial-quote blockquote { color: var(--teal-dark); }
 .testimonial-quote cite { color: var(--text-light); }
 
-/* ===== Instagram ===== */
-#instagram {
-  background: var(--sand);
-}
-#instagram .section-eyebrow { color: var(--sienna); }
-#instagram h2 { color: var(--teal-dark); }
+/* ===== TikTok ===== */
+#tiktok { background: var(--sand); }
+#tiktok .section-eyebrow { color: var(--sienna); }
+#tiktok h2 { color: var(--teal-dark); }
+#tiktok .container { max-width: 1120px; }
 
-.instagram-grid {
+.tiktok-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   gap: 1.5rem;
   margin-top: 2.5rem;
+  justify-items: center;
 }
-@media (max-width: 680px) {
-  .instagram-grid { grid-template-columns: 1fr; }
-}
-
-/* Each embed wrapper — constrains Instagram's iframe to a square-ish card */
-.ig-post {
-  background: #fff;
+.tt-post {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 9 / 16;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-  /* Instagram embeds load at ~400px wide by default; we scale them down */
-  display: flex;
-  flex-direction: column;
 }
-.ig-post blockquote.instagram-media {
-  margin: 0 !important;
-  min-width: unset !important;
-  width: 100% !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
+.tt-post iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
-.instagram-follow {
-  text-align: center;
-  margin-top: 2.5rem;
-}
-.instagram-follow p {
-  color: var(--text-light);
-  margin-bottom: 1rem;
-}
+.tiktok-follow { text-align: center; margin-top: 2.5rem; }
+.tiktok-follow p { color: var(--text-light); margin-bottom: 1rem; }
 
 /* ===== CTA / Final ===== */
 #join {
@@ -641,8 +629,11 @@ footer a:hover { color: var(--gold); }
 
 /* ===== Flyer ===== */
 #flyer {
-  background: #fff;
+  background: var(--teal-dark);
 }
+#flyer h2 { color: var(--sand); }
+#flyer p { color: var(--sand-dark); }
+#flyer .section-eyebrow { color: var(--gold); }
 .flyer-section {
   text-align: center;
 }
@@ -667,10 +658,47 @@ footer a:hover { color: var(--gold); }
   box-shadow: 0 16px 40px rgba(0,0,0,.25);
 }
 
+/* ===== Hamburger toggle ===== */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--sand);
+  display: block;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 /* ===== Responsive nav ===== */
 @media (max-width: 560px) {
-  .nav-links { display: none; }
-  .nav-inner { justify-content: center; }
+  .nav-toggle { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--teal-dark);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.35);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a {
+    display: block;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
 }
 
 /* ===== Focus visible ===== */
