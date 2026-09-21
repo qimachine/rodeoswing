@@ -574,6 +574,9 @@ p:last-child { margin-bottom: 0; }
 }
 
 #join {
+  background: var(--teal-dark);
+}
+#join.bg-loaded {
   background: var(--teal-dark) url('./images/footer-background.png') center / cover no-repeat;
   background-position: center calc(50% - 75px);
 }

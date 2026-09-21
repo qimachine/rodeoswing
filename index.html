@@ -219,12 +219,12 @@
       <div class="hero-gallery-grid">
         <img src="./photos/1.jpg" alt="Couple country swing dancing at Rodeo Swing Maine in Portland" loading="eager">
         <img src="./photos/2.jpg" alt="Dancers on the floor at Rodeo Swing Maine Tuesday night" loading="eager">
-        <img src="./photos/3.jpg" alt="Country swing dance class in Portland Maine" loading="eager">
-        <img src="./photos/4.jpg" alt="Social dancing at Zero Bar and Grille Portland Maine" loading="eager">
-        <img src="./photos/5.jpg" alt="Rodeo Swing Maine dancers on the wood dance floor" loading="eager">
-        <img src="./photos/6.jpg" alt="Beginner country swing lesson Portland Maine" loading="eager">
-        <img src="./photos/7.jpg" alt="Couples dancing country swing in Portland Maine" loading="eager">
-        <img src="./photos/8.jpg" alt="Rodeo Swing Maine Tuesday night social dance" loading="eager">
+        <img src="./photos/3.jpg" alt="Country swing dance class in Portland Maine" loading="lazy">
+        <img src="./photos/4.jpg" alt="Social dancing at Zero Bar and Grille Portland Maine" loading="lazy">
+        <img src="./photos/5.jpg" alt="Rodeo Swing Maine dancers on the wood dance floor" loading="lazy">
+        <img src="./photos/6.jpg" alt="Beginner country swing lesson Portland Maine" loading="lazy">
+        <img src="./photos/7.jpg" alt="Couples dancing country swing in Portland Maine" loading="lazy">
+        <img src="./photos/8.jpg" alt="Rodeo Swing Maine Tuesday night social dance" loading="lazy">
       </div>
       <div class="hero-gallery-overlay"></div>
     </div>
@@ -272,17 +272,17 @@
 
         <div class="tt-post">
           <iframe src="https://www.tiktok.com/player/v1/7682481498624134414?autoplay=0&music_info=0&description=0&rel=0"
-            title="Rodeo Swing Maine on TikTok" allow="fullscreen" scrolling="no"></iframe>
+            title="Rodeo Swing Maine on TikTok" allow="fullscreen" scrolling="no" loading="lazy"></iframe>
         </div>
 
         <div class="tt-post">
           <iframe src="https://www.tiktok.com/player/v1/7685532431620803853?autoplay=0&music_info=0&description=0&rel=0"
-            title="Rodeo Swing Maine on TikTok" allow="fullscreen" scrolling="no"></iframe>
+            title="Rodeo Swing Maine on TikTok" allow="fullscreen" scrolling="no" loading="lazy"></iframe>
         </div>
 
         <div class="tt-post">
           <iframe src="https://www.tiktok.com/player/v1/7683183026708237598?autoplay=0&music_info=0&description=0&rel=0"
-            title="Rodeo Swing Maine on TikTok" allow="fullscreen" scrolling="no"></iframe>
+            title="Rodeo Swing Maine on TikTok" allow="fullscreen" scrolling="no" loading="lazy"></iframe>
         </div>
       </div>
 
@@ -603,6 +603,7 @@
           src="./images/RodeoSwingMaine-Flyer-September2026.png"
           alt="Rodeo Swing Maine July 2026 flyer - country swing dance classes every Tuesday, Zero Bar and Grille, Portland ME"
           class="flyer-image"
+          loading="lazy"
         >
       </a>
 
@@ -737,6 +738,19 @@
         navToggle.setAttribute('aria-expanded', 'false');
       });
     });
+
+    const footer = document.getElementById('join');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          footer.classList.add('bg-loaded');
+          io.disconnect();
+        }
+      }, { rootMargin: '800px 0px' });  // start loading 800px before it scrolls into view
+      io.observe(footer);
+    } else {
+      footer.classList.add('bg-loaded');  // old browsers: just load it
+    }
   </script>
 
   <script async src="https://www.tiktok.com/embed.js"></script>
