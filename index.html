@@ -656,6 +656,10 @@
 
   <!-- ===== JOIN CTA ===== -->
   <footer id="join" aria-labelledby="join-heading">
+    <video class="footer-video" muted loop playsinline preload="none"
+         aria-hidden="true" tabindex="-1"
+         data-src="./video/rodeoswingmaine-footer-boomerang.mp4"></video>
+
     <div class="container">
       <p class="section-eyebrow">Come Dance With Us</p>
       <h2 id="join-heading">See You This Tuesday</h2>
@@ -739,17 +743,32 @@
       });
     });
 
+    // const footer = document.getElementById('join');
+    // if ('IntersectionObserver' in window) {
+    //   const io = new IntersectionObserver(([entry]) => {
+    //     if (entry.isIntersecting) {
+    //       footer.classList.add('bg-loaded');
+    //       io.disconnect();
+    //     }
+    //   }, { rootMargin: '800px 0px' });  // start loading 800px before it scrolls into view
+    //   io.observe(footer);
+    // } else {
+    //   footer.classList.add('bg-loaded');  // old browsers: just load it
+    // }
+
     const footer = document.getElementById('join');
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver(([entry]) => {
+    const footerVideo = footer.querySelector('.footer-video');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
-          footer.classList.add('bg-loaded');
-          io.disconnect();
+          if (!footerVideo.getAttribute('src')) footerVideo.src = footerVideo.dataset.src;
+          footerVideo.play().catch(() => {});
+        } else {
+          footerVideo.pause();
         }
-      }, { rootMargin: '800px 0px' });  // start loading 800px before it scrolls into view
-      io.observe(footer);
-    } else {
-      footer.classList.add('bg-loaded');  // old browsers: just load it
+      }, { rootMargin: '400px 0px' }).observe(footer);
     }
   </script>
 
