@@ -581,6 +581,16 @@ p:last-child { margin-bottom: 0; }
   background-position: center calc(50% - 75px);
 } */
 
+.footer-email a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.footer-email a:hover {
+  text-decoration: underline;
+}
+
 .footer-video {
   position: absolute;
   inset: 0;
